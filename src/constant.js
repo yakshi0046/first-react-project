@@ -1,4 +1,6 @@
-export const resturants = [
+// config driven UI
+
+export const resturantslist = [
   {
     type: "restaurant",
     data: {
