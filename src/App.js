@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body/Body";
 import Footer from "./components/Footer";
+import "firebase/firestore";
 
 //    Example of imports which will work
 // import * as obj from './components/Header.js
@@ -37,6 +38,17 @@ const AppLayout = () => {
     </>
   );
 };
+const firebaseConfig = {
+  apiKey: "AIzaSyBxyV4ZbgF7HAN1s7Od84FZVRMLzLNmTSA",
+  authDomain: "cart-27164.firebaseapp.com",
+  projectId: "cart-27164",
+  storageBucket: "cart-27164.appspot.com",
+  messagingSenderId: "748851021267",
+  appId: "1:748851021267:web:fb066ee0149b7352fddb26",
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 // createRoot tells react about root element
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<AppLayout />);
