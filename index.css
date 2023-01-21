@@ -21,6 +21,7 @@ padding:10px;
     border:1px solid black;
     padding:10px;
     margin:10px;
+    word-break: break-word;
 }
 .card >img{
     width:100%;
@@ -28,4 +29,21 @@ padding:10px;
 .resturant-list{
     display:flex;
     flex-wrap: wrap;
+}
+.shimmer-card{
+    width:200px;
+    height:200px;
+    margin: 20px;
+}
+.shimmer-card > .shimmer-img{
+    width:170px;
+    height:100px;
+    background: lightgray;
+    margin: 20px;
+}
+.shimmer-card > .shimmer-name{
+    width:170px;
+    height:20px;
+    background: lightgray;
+    margin: 20px;
 }

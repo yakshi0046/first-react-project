@@ -65,3 +65,65 @@ rating: "4.2",
 ii)take data from swiggy api
 https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0826802&lng=80.2707184&page_type=DESKTOP_WEB_LISTING
 add JSON viewer extension for json format this link
+
+Leacture 6:
+
+18. where should we call API calls?
+    in useEffect-> (load -> render page(shimmer)-> Api call-> update page(with data))
+
+const getResturants = async () => {
+const data = await fetch(
+"https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+);
+// convert data to json to read it
+const json = await data.json();
+// use optional chaining always
+setResturants(json?.data?.cards[2]?.data?.data?.cards);
+};
+
+// called after intial render, empty dependency-> call once only
+// with state it will call whenever state changes and once after render
+React.useEffect(() => {
+getResturants();
+}, [searchTxt]);
+
+19. we will get CORS error (because we are using data from another app)
+    add extension allow CORS(browser stops to take data from another browser)
+    Enable the extension
+
+20. add shimmer(because api will take time to get data until then show shimmer like cards without data)
+21. add filteredResturants because we need to filter data to show after searching but we need all resturants if
+    user searches again so we need another state filteredResturants
+22. added conditions where resturants are not defined , filteredresturants length is zero
+23. learned Conditional, optional chaining, added shimmer
+
+Leacture 7:Routers
+
+24. react-shimmer package is also available for shimmer but create your own shimmer
+    (never install extra and useless packages)
+
+npm i react-router-dom
+add About.js file
+
+25. add createBrowserRouter(most recommended to create route) in App.js from react-route-dom
+    have another options too to create route(read about them)
+    const appRouter=createBrowserRouter([
+    {
+    path:'/',
+    element:<AppLayout/>
+    },
+    {
+    path:'/about',
+    element:<About/>
+    }
+    ]);
+
+26. provide router to DOM how?
+    RouterProvider from react-router-dom
+    root.render(<RouterProvider  router={appRouter}/>);
+
+27. provide href to About in header how?
+    use Link from react-router-dom, why not anchor tag?
+    anchor tag reloads whole page, Link makes our project SPA(single page application)
+    it will render our component without reloading whole page
+    At the end of day, LInk is only a anchor tag

@@ -371,3 +371,9 @@ export const resturantslist = [
     subtype: "basic",
   },
 ];
+
+export const image =
+  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+
+export const logo =
+  "https://mir-s3-cdn-cf.behance.net/project_modules/1400/a9176967613739.5b3f984f5e0e9.jpg";

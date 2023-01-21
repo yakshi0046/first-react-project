@@ -1,11 +1,9 @@
+import { logo } from "../constant";
+import { Link } from "react-router-dom";
 const Title = () => {
   return (
     <a href="/">
-      <img
-        className="logo"
-        src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/a9176967613739.5b3f984f5e0e9.jpg"
-        alt="logo"
-      />
+      <img className="logo" src={logo} alt="logo" />
     </a>
   );
 };
@@ -16,7 +14,9 @@ export const Header = () => {
       <div className="nav-items">
         <ul>
           <li>Home</li>
-          <li>About</li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
           <li>Contact</li>
           <li>Cart</li>
         </ul>
