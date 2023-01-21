@@ -1,4 +1,6 @@
 import { image } from "../../constant";
+import Link from "react-router-dom";
+
 export default ResturantCard = (props) => {
   const { name, cuisines, totalRatingsString, cloudinaryImageId } = props;
   return (

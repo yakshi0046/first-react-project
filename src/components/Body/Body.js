@@ -2,6 +2,7 @@ import React from "react";
 import { resturantslist } from "../../constant";
 import ResturantCard from "./ResturantCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 export default Body = () => {
   const [searchTxt, setSeachTxt] = React.useState("");
@@ -66,7 +67,12 @@ export default Body = () => {
           ) : (
             filteredResturants?.map((resturant) => {
               return (
-                <ResturantCard {...resturant?.data} key={resturant.data.id} />
+                <Link
+                  to={"/resturantMenu/" + resturant?.data?.id}
+                  key={resturant.data.id}
+                >
+                  <ResturantCard {...resturant?.data} />
+                </Link>
               );
             })
           )}

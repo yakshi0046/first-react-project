@@ -127,3 +127,41 @@ add About.js file
     anchor tag reloads whole page, Link makes our project SPA(single page application)
     it will render our component without reloading whole page
     At the end of day, LInk is only a anchor tag
+
+28. create error component why?
+    if user went to any another route which is not provided to cretateBrowserRouter
+    it will not throw error in console(give default error page given by react-router-dom)
+    make your own cool error page
+
+29. how to add error comp in route:
+    {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <Error />,
+    }
+30. how to get error details?
+    useRouteError from react-router-dom
+    const err = useRouteError();
+    <h2>{err.status + " : " + err.statusText}</h2>
+
+31. want header and footer in About page so we need to put it as child in appLayout
+    but it will load on browser with body
+    so use OUTLET (to add children about,contact)
+    Add outlet in  
+     <Header />
+    <Outlet />
+    <Footer />
+    add children in appRouter
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <Error />,
+    children: [
+    {
+    path: "/",
+    element: <Body />,
+    },
+    {
+    path: "/about",
+    element: <About />,
+    },
+    ],

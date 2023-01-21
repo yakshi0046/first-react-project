@@ -47,3 +47,9 @@ padding:10px;
     background: lightgray;
     margin: 20px;
 }
+.resturant-menu{
+    display:flex
+}
+.resturant-menu>img{
+    width:40%
+}

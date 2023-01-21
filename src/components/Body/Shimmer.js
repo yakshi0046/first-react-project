@@ -1,9 +1,6 @@
 import React from "react";
-import { resturantslist } from "../../constant";
-import ResturantCard from "./ResturantCard";
-import Shimmer from "./Shimmer";
 
-export default Shimmer = () => {
+const Shimmer = () => {
   return (
     <div className="resturant-list">
       {Array(10)
@@ -20,3 +17,4 @@ export default Shimmer = () => {
     </div>
   );
 };
+export default Shimmer;
